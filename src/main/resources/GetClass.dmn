@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="DmnItype" name="Get Insurance" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.4.0">
+  <decision id="iType" name="Get Insurance">
+    <decisionTable id="DecisionTable_17snr1a">
+      <input id="InputClause_0c60vwi" label="Age">
+        <inputExpression id="LiteralExpression_1yb3yyp" typeRef="long">
+          <text>age</text>
+        </inputExpression>
+      </input>
+      <input id="Input_1" label="Insurance Type" biodi:width="150">
+        <inputExpression id="InputExpression_1" typeRef="string">
+          <text>TIO</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1s2g3y1" label="Duration">
+        <inputExpression id="LiteralExpression_0y8xtz4" typeRef="string">
+          <text>Duration</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_00qlf47" label="Insurance Amount">
+        <inputExpression id="LiteralExpression_00p7zu4" typeRef="long">
+          <text>Amount</text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="Emi" name="EMI" typeRef="long" />
+      <rule id="DecisionRule_1kutlte">
+        <inputEntry id="UnaryTests_0jptf6z">
+          <text>[18..30]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qx73s0">
+          <text>"LIC"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1f7qk2o">
+          <text>"5Years"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_02qo63q">
+          <text>1000000</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_049vuhh">
+          <text>10000</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1raeyty">
+        <inputEntry id="UnaryTests_0t1h1r6">
+          <text>[18..30]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ujouo0">
+          <text>"LIC"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hlzpt9">
+          <text>"5Years"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1waltke">
+          <text>2000000</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_19occt5">
+          <text>20000</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="iType">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
